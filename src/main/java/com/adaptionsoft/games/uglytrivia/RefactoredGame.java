@@ -48,7 +48,7 @@ public class RefactoredGame {
         } else {
             winner = getCurrentPlayer().isWinner("Answer was corrent!!!!");
         }
-        intCurrentPlayer();
+        initCurrentPlayer();
         return winner;
     }
 
@@ -56,7 +56,7 @@ public class RefactoredGame {
         System.out.println("Question was incorrectly answered");
         System.out.println(getCurrentPlayer().getName() + " was sent to the penalty box");
         getCurrentPlayer().setInPenaltyBox(true);
-        intCurrentPlayer();
+        initCurrentPlayer();
         return true;
     }
 
@@ -64,7 +64,7 @@ public class RefactoredGame {
         return players.get(currentPlayer);
     }
 
-    private void intCurrentPlayer() {
+    private void initCurrentPlayer() {
         currentPlayer++;
         if (currentPlayer == players.size()) {
             currentPlayer = 0;
